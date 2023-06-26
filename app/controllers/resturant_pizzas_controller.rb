@@ -13,13 +13,13 @@ class ResturantPizzasController < ApplicationController
     end
 
     def create
-      rest_p =ResturantPizza.create!(pizza_params)
+      rest_p =ResturantPizza.create!(resturant_params)
       render json: rest_p , status: :created
     end
     def update
       rest_p = find_resturant
-     ResturantPizza.update!(resturant_params)
-      render json:rest_p
+     rest_p.update!(resturant_params)
+      render json: rest_p
     end
 
     def destroy
@@ -48,4 +48,4 @@ class ResturantPizzasController < ApplicationController
   end
 end
 
-end
+

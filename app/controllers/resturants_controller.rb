@@ -13,7 +13,7 @@ class ResturantsController < ApplicationController
     end
 
     def create
-     resturant =Resturant.create!(pizza_params)
+     resturant =Resturant.create!(resturant_params)
       render json: resturant , status: :created
     end
     def update
@@ -45,5 +45,5 @@ class ResturantsController < ApplicationController
       render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 
-  end
+
 end
